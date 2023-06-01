@@ -1,0 +1,32 @@
+2023-06-01T04:21:42+00:00 CRITICAL Uncaught TypeError: call_user_func(): Argument #1 ($callback) must be a valid callback, array must have exactly two members in /var/www/html/wp-local/wp-includes/rest-api/class-wp-rest-request.php:911
+Stack trace:
+#0 /var/www/html/wp-local/wp-includes/rest-api/class-wp-rest-server.php(1017): WP_REST_Request->has_valid_params()
+#1 /var/www/html/wp-local/wp-includes/rest-api/class-wp-rest-server.php(442): WP_REST_Server->dispatch()
+#2 /var/www/html/wp-local/wp-includes/rest-api.php(410): WP_REST_Server->serve_request()
+#3 /var/www/html/wp-local/wp-includes/class-wp-hook.php(308): rest_api_loaded()
+#4 /var/www/html/wp-local/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /var/www/html/wp-local/wp-includes/plugin.php(565): WP_Hook->do_action()
+#6 /var/www/html/wp-local/wp-includes/class-wp.php(399): do_action_ref_array()
+#7 /var/www/html/wp-local/wp-includes/class-wp.php(780): WP->parse_request()
+#8 /var/www/html/wp-local/wp-includes/functions.php(1334): WP->main()
+#9 /var/www/html/wp-local/wp-blog-header.php(16): wp()
+#10 /var/www/html/wp-local/index.php(17): require('...')
+#11 {main}
+  thrown in /var/www/html/wp-local/wp-includes/rest-api/class-wp-rest-request.php on line 911
+
+2023-06-01T04:22:15+00:00 CRITICAL Uncaught TypeError: call_user_func(): Argument #1 ($callback) must be a valid callback, class "is_required" not found in /var/www/html/wp-local/wp-includes/rest-api/class-wp-rest-request.php:911
+Stack trace:
+#0 /var/www/html/wp-local/wp-includes/rest-api/class-wp-rest-server.php(1017): WP_REST_Request->has_valid_params()
+#1 /var/www/html/wp-local/wp-includes/rest-api/class-wp-rest-server.php(442): WP_REST_Server->dispatch()
+#2 /var/www/html/wp-local/wp-includes/rest-api.php(410): WP_REST_Server->serve_request()
+#3 /var/www/html/wp-local/wp-includes/class-wp-hook.php(308): rest_api_loaded()
+#4 /var/www/html/wp-local/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /var/www/html/wp-local/wp-includes/plugin.php(565): WP_Hook->do_action()
+#6 /var/www/html/wp-local/wp-includes/class-wp.php(399): do_action_ref_array()
+#7 /var/www/html/wp-local/wp-includes/class-wp.php(780): WP->parse_request()
+#8 /var/www/html/wp-local/wp-includes/functions.php(1334): WP->main()
+#9 /var/www/html/wp-local/wp-blog-header.php(16): wp()
+#10 /var/www/html/wp-local/index.php(17): require('...')
+#11 {main}
+  thrown in /var/www/html/wp-local/wp-includes/rest-api/class-wp-rest-request.php on line 911
+
