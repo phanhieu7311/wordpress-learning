@@ -37,15 +37,25 @@ add_action( 'rest_api_init', function () {
 
 // API test form
 function test_form(WP_REST_Request $request) {
-    echo('okokokok');
-    exit();
     global $wpdb;
     $username = $request['uname'] ?? '';
     $password = $request['password'] ?? '';
-    $confirmPassword = $request['cpassword'] ?? '';
+
+    $wpdb->insert( $wpdb->users, [
+        'user_login' => $username,
+        'user_pass' => $password,
+        'user_nicename' => $username,
+        'user_email' => $username,
+        'display_name' => $username
+    ]);
 
     // Create the response object
-    $response = new WP_REST_Response( $data );
+    $response = new WP_REST_Response([
+        'code' => 200,
+        'message' => 'Success',
+        'data' => null
+    ]);
+    return $response;
 }
 add_action( 'rest_api_init', function () {
     register_rest_route( 'myplugin/v1', '/test-form', array(
@@ -71,9 +81,7 @@ add_action( 'rest_api_init', function () {
             ]
         ],
         'permission_callback' => function () {
-            print_r(get_current_user());
-            exit();
-            return current_user_can( 'add_users' );
+            return true;
         }
     ) );
 } );
