@@ -1,0 +1,15 @@
+version: "3"
+services:
+  wordpress:
+    image: wordpress:latest
+    container_name: 'wp-learning'
+    restart: always
+    ports:
+      - "8000:80"
+    environment:
+      DB_HOST: host.docker.internal
+      DB_USER: root
+      DB_PASSWORD: MyN3wP4ssw0rd
+      DB_NAME: wp-local
+    volumes:
+      ["./:/var/www/html"]
